@@ -60,7 +60,7 @@ echo "Домен: $DOMAIN"
 echo "--- 3. Port Hopping (Маскировка портов) ---"
 START_PORT=20000
 END_PORT=50000
-MAIN_PORT=443
+MAIN_PORT=12345
 
 iptables -t nat -F PREROUTING
 iptables -t nat -A PREROUTING -p udp --dport $START_PORT:$END_PORT -j DNAT --to-destination :$MAIN_PORT
